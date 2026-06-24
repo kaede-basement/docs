@@ -2,12 +2,17 @@ import DefaultTheme from 'vitepress/theme'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { watch } from 'vue'
-import { Router } from 'vitepress/dist/client/index.js'
+import { inBrowser, Router } from 'vitepress/dist/client/index.js'
 import "./custom.css";
 
 export default {
   extends: DefaultTheme,
   enhanceApp({ router }: { "router": Router }) {
+    // Otherwise, 'document' won't be defined
+    if (!inBrowser) {
+      return;
+    }
+
     let currentRoute: string | undefined;
 
     NProgress.configure({ showSpinner: false });
