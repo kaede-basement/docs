@@ -3,8 +3,20 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/docs/",
-  title: "Kaede - Documentation",
+  srcDir: "src",
+  title: "Documentation",
   description: "A comprehensive documentation on Kaede",
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en'
+    },
+    ru: {
+      label: 'Русский',
+      lang: 'ru', // optional, will be added  as `lang` attribute on `html` tag
+      link: '/ru/' // shows on navbar translations menu, can be external
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

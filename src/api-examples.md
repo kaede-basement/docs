@@ -29,7 +29,9 @@ const { theme, page, frontmatter } = useData()
 
 <script setup>
 import { useData } from 'vitepress'
+import { ref } from 'vue'
 
+const count = ref(0)
 const { site, theme, page, frontmatter } = useData()
 </script>
 
@@ -43,6 +45,19 @@ const { site, theme, page, frontmatter } = useData()
 
 ### Page Frontmatter
 <pre>{{ frontmatter }}</pre>
+
+### Vue
+
+The count is: {{ count }}
+
+<button :class="$style.button" @click="count++">Increment</button>
+
+<style module>
+.button {
+  color: red;
+  font-weight: bold;
+}
+</style>
 
 ## More
 
