@@ -5,6 +5,8 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.3",
+    "nprogress": "^0.2.0",
     "vitepress": "^2.0.0-alpha.17",
     "vue": "^3.5.38"
   }
