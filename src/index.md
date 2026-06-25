@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Kaede"
   text: "A comprehensive documentation"
-  tagline: written without AI <3
+  tagline: <3
   actions:
     - theme: brand
       text: Get Started

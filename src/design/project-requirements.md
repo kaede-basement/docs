@@ -1,6 +1,6 @@
 # Project Requirements
 
-## Business Requirements
+## Motivation
 
 The idea of applications ([Tachiyomi](https://github.com/tachiyomiorg), [Vencord](https://vencord.dev/)) and games ([Mindustry](https://github.com/Anuken/Mindustry)) having addons has always fascinated me. Users of such software can extend or change existing features at runtime by using easily pluggable parts of code. While the execution of user code may be dangerous, it also allows one to customize the software to a way greater extent.
 
