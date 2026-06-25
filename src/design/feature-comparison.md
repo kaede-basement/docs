@@ -4,7 +4,7 @@
 
 The following table compares cross-platform (desktop only) launchers. References only include other tables that were used in this feature comparison.
 
-The "User Interface" and """User Experience" fields included results of testing the listed launchers on a laptop with Windows 10 IoT Enterprise LTSC 21H2, AMD Ryzen 5 5500U (CPU), and AMD Radeon RX Vega 7 (iGPU).
+The "User Interface" and "User Experience" fields included results of testing the listed launchers on a laptop with Windows 10 IoT Enterprise LTSC 21H2, AMD Ryzen 5 5500U (CPU), and AMD Radeon RX Vega 7 (iGPU).
 
 For more launchers, see Tayou's table[^1].
 
@@ -26,43 +26,20 @@ For more launchers, see Tayou's table[^1].
   </thead>
   <tbody>
     <tr>
-      <td>Tech Stack</td>
-      <td>C++ (Qt)<Ref id="1"></Ref></td>
-      <td>Java (JavaFX)</td>
-      <td>TypeScript (Vue, Electron)</td>
-      <td>TypeScript, Rust (React, Tauri)</td>
-      <td>JavaScript, Rust (Vue, Tauri)<Ref id="1"></Ref></td>
-      <td>Java (Swing)<Ref id="1"></Ref></td>
-      <td>JavaScript (React, Electron)<Ref id="1"></Ref></td>
-      <td>Java, JavaScript (Vue, Electron)<Ref id="1"></Ref></td>
-      <td>TypeScript, Rust (Astro)<Ref id="1"></Ref></td>
-      <td>TypeScript, Rust (Tauri)</td>
+      <td colspan="11" align="center">Technical</td>
     </tr>
     <tr>
-      <td>User Interface</td>
-      <td>Primitive</td>
-      <td>Sleek; close to Material Design 2</td>
-      <td>Sleek; Vuetify (a mix of Material Design 2 & 3)</td>
-      <td>Sleek; Chakra UI v2</td>
-      <td>Sleek; a mix of different modern design systems</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>User Experience</td>
-      <td>Responsive and smooth</td>
-      <td>A bit choppy</td>
-      <td>A bit choppy</td>
-      <td>Responsive and smooth</td>
-      <td>A bit choppy</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>Technology Stack</td>
+      <td>C++ <Secondary>(Qt)</Secondary><Ref id="1"></Ref></td>
+      <td>Java <Secondary>(JavaFX)</Secondary></td>
+      <td>TypeScript <Secondary>(Vue, Electron)</Secondary></td>
+      <td>TypeScript, Rust <Secondary>(React, Tauri)</Secondary></td>
+      <td>JavaScript, Rust <Secondary>(Vue, Tauri)</Secondary><Ref id="1"></Ref></td>
+      <td>Java <Secondary>(Swing)</Secondary><Ref id="1"></Ref></td>
+      <td>JavaScript <Secondary>(React, Electron)</Secondary><Ref id="1"></Ref></td>
+      <td>Java, JavaScript <Secondary>(Vue, Electron)</Secondary><Ref id="1"></Ref></td>
+      <td>TypeScript, Rust <Secondary>(Astro)</Secondary><Ref id="1"></Ref></td>
+      <td>TypeScript, Rust <Secondary>(Tauri)</Secondary></td>
     </tr>
     <tr>
       <td>RAM usage (before / after short interactions)</td>
@@ -78,21 +55,221 @@ For more launchers, see Tayou's table[^1].
       <td></td>
     </tr>
     <tr>
+      <td colspan="11" align="center">Appearance</td>
+    </tr>
+    <tr>
+      <td>User Interface</td>
+      <td>Primitive</td>
+      <td>Sleek; <Secondary>close to Material Design 2</Secondary></td>
+      <td>Sleek; <Secondary>Vuetify (a mix of Material Design 2 & 3)</Secondary></td>
+      <td>Sleek; <Secondary>Chakra UI v2</Secondary></td>
+      <td>Sleek; <Secondary>a mix of different modern design systems</Secondary></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>User Experience</td>
+      <td>Responsive and smooth</td>
+      <td>A bit choppy <Secondary>(quick but animations are lagging)</Secondary></td>
+      <td>A bit choppy <Secondary>(might be slow; animations sometimes lag)</Secondary></td>
+      <td>Responsive and smooth</td>
+      <td>A bit choppy <Secondary>(might be slow; animations sometimes lag)</Secondary></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Customization</td>
+      <td>Custom themes <Secondary>(QCSS)</Secondary></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="11" align="center">Accounts</td>
+    </tr>
+    <tr>
       <td>Authentication</td>
-      <td>MSA, Offline. <Secondary>Requires MSA</Secondary></td>
-      <td>MSA, Offline, LittleSkin, Custom Auth servers. Requires MSA</td>
+      <td>MSA, Offline; <Secondary>requires MSA</Secondary></td>
+      <td>MSA, Offline, LittleSkin, Custom Auth servers</td>
+      <td>MSA, Offline, Ely.by, LittleSkin, Custom Auth servers</td>
+      <td>MSA, Offline, LittleSkin, Custom Auth servers; <Secondary>requires MSA</Secondary></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <td>AHH</td>
+      <td>Skin Manager</td>
+      <td>Only for MSA</td>
+      <td colspan="3" align="center">Yes; <Secondary>with 3D viewer</Secondary></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <td>AHH</td>
+      <td>Java Management</td>
+      <td>Downloading, Switching</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <td>AHH</td>
+      <td><a href="https://bmclapidoc.bangbang93.com/">BMCLAPI</a> Support</td>
+      <td>No</td>
+      <td colspan="2" align="center">Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <td>AHH</td>
+      <td>Toggling version metadata updates</td>
+      <td>No</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="11" align="center">Mod Loader & OptiFine Support</td>
+    </tr>
+    <tr>
+      <td>OptiFine</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>LiteLoader</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Forge</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Fabric</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Quilt</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>NeoForge</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="11" align="center">Instances</td>
+    </tr>
+    <tr>
+      <td>Import</td>
+      <td>MultiMC, Modrinth, CurseForge, Technic</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Export</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
