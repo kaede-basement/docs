@@ -77,6 +77,23 @@ For more launchers, see Tayou's table[^1].
       <td></td>
       <td></td>
     </tr>
+    <tr>
+      <td>Authentication</td>
+      <td>MSA, Offline. <Secondary>Requires MSA</Secondary></td>
+      <td>MSA, Offline, LittleSkin, Custom Auth servers. Requires MSA</td>
+    </tr>
+    <tr>
+      <td>AHH</td>
+    </tr>
+    <tr>
+      <td>AHH</td>
+    </tr>
+    <tr>
+      <td>AHH</td>
+    </tr>
+    <tr>
+      <td>AHH</td>
+    </tr>
   </tbody>
 </table>
 
