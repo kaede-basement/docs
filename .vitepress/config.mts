@@ -21,21 +21,34 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Get Started', link: '/get-started' },
+      { text: 'Live Preview', link: 'https://kaede-basement.github.io/kaede/' },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'For Users',
         items: [
+          { text: 'Get Started', link: '/get-started' },
+        ],
+      },
+      {
+        text: 'Architecture / Design',
+        items: [
+          { text: 'Project Requirements', link: '/design/project-requirements' },
           { text: 'Markdown Examples', link: '/markdown-examples' },
+        ],
+      },
+      {
+        text: 'Technical',
+        items: [
           { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
+        ],
+      },
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/kaede-basement/docs' }
     ]
   }
 })

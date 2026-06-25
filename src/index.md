@@ -3,16 +3,16 @@
 layout: home
 
 hero:
-  name: "Kaede - Documentation"
-  text: "A comprehensive documentation on Kaede"
-  tagline: My great project tagline
+  name: "Kaede"
+  text: "A comprehensive documentation"
+  tagline: written without AI <3
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /get-started
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Live Preview
+      link: https://kaede-basement.github.io/kaede/
 
 features:
   - title: Feature A

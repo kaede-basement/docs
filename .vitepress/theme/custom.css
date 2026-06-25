@@ -1,4 +1,1 @@
-#nprogress .bar {
-  background: var(--vp-c-brand-1) !important;
-  height: 3px !important;
-}
+#nprogress .bar { background: var(--vp-c-brand-1) }
