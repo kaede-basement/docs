@@ -2,12 +2,15 @@ import DefaultTheme from 'vitepress/theme'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { watch } from 'vue'
-import { inBrowser, Router } from 'vitepress/dist/client/index.js'
+import { inBrowser, type EnhanceAppContext } from 'vitepress/dist/client/index.js'
 import "./custom.css";
+import Ref from './components/Ref.vue'
 
 export default {
   extends: DefaultTheme,
-  enhanceApp({ router }: { "router": Router }) {
+  enhanceApp({ app, router }: EnhanceAppContext) {
+    app.component('Ref', Ref);
+
     // Otherwise, 'document' won't be defined
     if (!inBrowser) {
       return;

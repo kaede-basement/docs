@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import footnote from 'markdown-it-footnote'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -15,6 +16,11 @@ export default defineConfig({
       label: 'Русский',
       lang: 'ru', // optional, will be added  as `lang` attribute on `html` tag
       link: '/ru/' // shows on navbar translations menu, can be external
+    }
+  },
+  markdown: {
+    config: (md) => {
+      md.use(footnote);
     }
   },
   themeConfig: {
