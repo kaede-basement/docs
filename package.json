@@ -2,9 +2,11 @@
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "lint": "biome check ."
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.1",
     "@types/nprogress": "^0.2.3",
     "markdown-it-footnote": "^4.0.0",
     "nprogress": "^0.2.0",
