@@ -2,11 +2,9 @@
 
 ## Table
 
-The following table compares cross-platform (desktop only) launchers. References only include other tables that were used in this feature comparison.
+The following table compares cross-platform (desktop only) launchers. References only include other tables that were used in this feature comparison.[^1]
 
 The "User Interface" and "User Experience" fields included results of testing the listed launchers on a laptop with Windows 10 IoT Enterprise LTSC 21H2, AMD Ryzen 5 5500U (CPU), and AMD Radeon RX Vega 7 (iGPU).
-
-For more launchers, see Tayou's table[^1].
 
 <!--suppress CheckEmptyScriptTag -->
 <table>
@@ -56,15 +54,41 @@ For more launchers, see Tayou's table[^1].
       <td></td>
     </tr>
     <tr>
+      <td>Portable Mode Support</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CLI Support</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
       <td colspan="11">Appearance</td>
     </tr>
     <tr>
       <td>User Interface</td>
       <td>Primitive</td>
-      <td>Sleek; <Secondary>close to Material Design 2</Secondary></td>
-      <td>Sleek; <Secondary>Vuetify (a mix of Material Design 2 & 3)</Secondary></td>
-      <td>Sleek; <Secondary>Chakra UI v2</Secondary></td>
-      <td>Sleek; <Secondary>a mix of different modern design systems</Secondary></td>
+      <td>Sleek <Secondary>(close to Material Design 2)</Secondary></td>
+      <td>Sleek <Secondary>(Vuetify [a mix of Material Design 2 & 3])</Secondary></td>
+      <td>Sleek <Secondary>(Chakra UI v2)</Secondary></td>
+      <td>Sleek <Secondary>(a mix of different modern design systems)</Secondary></td>
       <td></td>
       <td></td>
       <td></td>
@@ -75,9 +99,9 @@ For more launchers, see Tayou's table[^1].
       <td>User Experience</td>
       <td>Responsive and smooth</td>
       <td>A bit choppy <Secondary>(quick but animations are lagging)</Secondary></td>
-      <td>A bit choppy <Secondary>(might be slow; animations sometimes lag)</Secondary></td>
+      <td>A bit choppy <Secondary>(might be slow & animations sometimes lag)</Secondary></td>
       <td>Responsive and smooth</td>
-      <td>A bit choppy <Secondary>(might be slow; animations sometimes lag)</Secondary></td>
+      <td>A bit choppy <Secondary>(might be slow & animations sometimes lag)</Secondary></td>
       <td></td>
       <td></td>
       <td></td>
@@ -102,10 +126,10 @@ For more launchers, see Tayou's table[^1].
     </tr>
     <tr>
       <td>Authentication</td>
-      <td>MSA, Offline; <Secondary>requires MSA</Secondary></td>
+      <td>MSA, Offline <Secondary>(requires MSA)</Secondary></td>
       <td>MSA, Offline, LittleSkin, Custom Auth servers</td>
       <td>MSA, Offline, Ely.by, LittleSkin, Custom Auth servers</td>
-      <td>MSA, Offline, LittleSkin, Custom Auth servers; <Secondary>requires MSA</Secondary></td>
+      <td>MSA, Offline, LittleSkin, Custom Auth servers <Secondary>(requires MSA)</Secondary></td>
       <td></td>
       <td></td>
       <td></td>
@@ -116,7 +140,237 @@ For more launchers, see Tayou's table[^1].
     <tr>
       <td>Skin Manager</td>
       <td>Only for MSA</td>
-      <td colspan="3">Yes; <Secondary>with 3D viewer</Secondary></td>
+      <td colspan="3"><Status has /> <Secondary>(with 3D viewer)</Secondary></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="11">Mod Loader & OptiFine Support</td>
+    </tr>
+    <tr>
+      <td>OptiFine</td>
+      <td><Status /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>LiteLoader</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Forge</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Legacy Fabric</td>
+      <td><Status /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Fabric</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Quilt</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>NeoForge</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="11">Modpack Providers</td>
+    </tr>
+    <tr>
+      <td>CurseForge</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Modrinth</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ATLauncher</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>FTB</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Legacy FTB</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Technic</td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="11">Instances & Java</td>
+    </tr>
+    <tr>
+      <td>Instance Import</td>
+      <td>MultiMC, Modrinth, CurseForge, Technic</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Instance Export</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Instance Grouping and Sorting</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Launching instance without a connection</td>
+      <td><Status /></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
@@ -138,135 +392,12 @@ For more launchers, see Tayou's table[^1].
       <td></td>
     </tr>
     <tr>
-      <td colspan="11">Mod Loader & OptiFine Support</td>
-    </tr>
-    <tr>
-      <td>OptiFine</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>LiteLoader</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Forge</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Fabric</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Quilt</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>NeoForge</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td colspan="11">Instances</td>
-    </tr>
-    <tr>
-      <td>Import</td>
-      <td>MultiMC, Modrinth, CurseForge, Technic</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Export</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Toggling version metadata updates</td>
-      <td><Status has /> <Secondary>(always checks)</Secondary></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
       <td colspan="11">Connection</td>
     </tr>
     <tr>
       <td><a href="https://bmclapidoc.bangbang93.com/">BMCLAPI</a> Support</td>
       <td><Status /></td>
-      <td colspan="2">Yes</td>
+      <td colspan="2"><Status has /></td>
       <td></td>
       <td></td>
       <td></td>
@@ -280,7 +411,7 @@ For more launchers, see Tayou's table[^1].
       <td></td>
       <td></td>
       <td></td>
-      <td>Yes</td>
+      <td><Status has /></td>
       <td></td>
       <td></td>
       <td></td>
@@ -289,11 +420,11 @@ For more launchers, see Tayou's table[^1].
       <td></td>
     </tr>
     <tr>
-      <td>Download Tasks</td>
+      <td>Displays Download Tasks</td>
       <td></td>
       <td></td>
       <td></td>
-      <td>Yes</td>
+      <td><Status has /></td>
       <td></td>
       <td></td>
       <td></td>
@@ -301,9 +432,66 @@ For more launchers, see Tayou's table[^1].
       <td></td>
       <td></td>
     </tr>
+    <tr>
+      <td colspan="11">Other</td>
+    </tr>
+    <tr>
+      <td>Mods, Worlds, Resourcepack, Shaderpacks Management</td>
+      <td>Downloading, Configuring</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>System Load Monitoring</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Log Viewer</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><Status has /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Advertisements</td>
+      <td><Status invert /></td>
+      <td></td>
+      <td></td>
+      <td><Status invert /> <Secondary>(although shows "Star Us" every 10 launches)</Secondary><Ref id="2" /></td>
+      <td><Status has invert /></td>
+      <td></td>
+      <td><Status has invert /></td>
+      <td><Status has invert /></td>
+      <td><Status has invert /></td>
+      <td></td>
+    </tr>
   </tbody>
 </table>
 
 ## References
 
-[^1]: https://mc-launcher.tayou.org/
+<ol>
+  <li id="reference-1"><a href="https://mc-launcher.tayou.org/">A Launcher comparison table by Tayou</a></li>
+  <li id="reference-2"><a href="https://github.com/UNIkeEN/SJMCL/blob/0fe6795d403765b3379857b21069f653f3912149/src/layouts/main-layout.tsx#L169-L173">"Star Us" Modal location in code</a></li>
+</ol>

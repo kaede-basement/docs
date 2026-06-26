@@ -4,6 +4,6 @@ const { id } = defineProps<{ id: string | number }>();
 
 <template>
   <sup>
-    <a :href="`#fn${id}`">[{{ id }}]</a>
+    <a :href="`#reference-${id}`">[{{ id }}]</a>
   </sup>
 </template>
