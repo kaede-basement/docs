@@ -43,7 +43,7 @@ For more launchers, see Tayou's table[^1].
     </tr>
     <tr>
       <td>RAM usage (before / after short interactions)</td>
-      <td>26 / 36 MB</td>
+      <td>26 / 40 MB <Secondary>(+15 MB with a custom theme)</Secondary></td>
       <td>150 / 300 MB</td>
       <td>230 / 440 MB</td>
       <td>200 / 290 MB</td>
@@ -126,31 +126,6 @@ For more launchers, see Tayou's table[^1].
     <tr>
       <td>Java Management</td>
       <td>Downloading, Switching</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td><a href="https://bmclapidoc.bangbang93.com/">BMCLAPI</a> Support</td>
-      <td>No</td>
-      <td colspan="2" align="center">Yes</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Toggling version metadata updates</td>
-      <td>No</td>
       <td></td>
       <td></td>
       <td></td>
@@ -264,6 +239,60 @@ For more launchers, see Tayou's table[^1].
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Toggling version metadata updates</td>
+      <td>No <Secondary>(always enabled)</Secondary></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="11" align="center">Connection</td>
+    </tr>
+    <tr>
+      <td><a href="https://bmclapidoc.bangbang93.com/">BMCLAPI</a> Support</td>
+      <td>No</td>
+      <td colspan="2" align="center">Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Service Ping Tests</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Download Tasks</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Yes</td>
       <td></td>
       <td></td>
       <td></td>
