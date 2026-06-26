@@ -1,5 +1,5 @@
 <template>
-  <span style="opacity: 0.6">
+  <span class="text-secondary">
     <slot />
   </span>
 </template>

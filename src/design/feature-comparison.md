@@ -8,6 +8,7 @@ The "User Interface" and "User Experience" fields included results of testing th
 
 For more launchers, see Tayou's table[^1].
 
+<!--suppress CheckEmptyScriptTag -->
 <table>
   <thead>
     <tr>
@@ -26,19 +27,19 @@ For more launchers, see Tayou's table[^1].
   </thead>
   <tbody>
     <tr>
-      <td colspan="11" align="center">Technical</td>
+      <td colspan="11">Technical</td>
     </tr>
     <tr>
       <td>Technology Stack</td>
-      <td>C++ <Secondary>(Qt)</Secondary><Ref id="1"></Ref></td>
+      <td>C++ <Secondary>(Qt)</Secondary><Ref id="1" /></td>
       <td>Java <Secondary>(JavaFX)</Secondary></td>
       <td>TypeScript <Secondary>(Vue, Electron)</Secondary></td>
       <td>TypeScript, Rust <Secondary>(React, Tauri)</Secondary></td>
-      <td>JavaScript, Rust <Secondary>(Vue, Tauri)</Secondary><Ref id="1"></Ref></td>
-      <td>Java <Secondary>(Swing)</Secondary><Ref id="1"></Ref></td>
-      <td>JavaScript <Secondary>(React, Electron)</Secondary><Ref id="1"></Ref></td>
-      <td>Java, JavaScript <Secondary>(Vue, Electron)</Secondary><Ref id="1"></Ref></td>
-      <td>TypeScript, Rust <Secondary>(Astro)</Secondary><Ref id="1"></Ref></td>
+      <td>JavaScript, Rust <Secondary>(Vue, Tauri)</Secondary><Ref id="1" /></td>
+      <td>Java <Secondary>(Swing)</Secondary><Ref id="1" /></td>
+      <td>JavaScript <Secondary>(React, Electron)</Secondary><Ref id="1" /></td>
+      <td>Java, JavaScript <Secondary>(Vue, Electron)</Secondary><Ref id="1" /></td>
+      <td>TypeScript, Rust <Secondary>(Astro)</Secondary><Ref id="1" /></td>
       <td>TypeScript, Rust <Secondary>(Tauri)</Secondary></td>
     </tr>
     <tr>
@@ -55,7 +56,7 @@ For more launchers, see Tayou's table[^1].
       <td></td>
     </tr>
     <tr>
-      <td colspan="11" align="center">Appearance</td>
+      <td colspan="11">Appearance</td>
     </tr>
     <tr>
       <td>User Interface</td>
@@ -97,7 +98,7 @@ For more launchers, see Tayou's table[^1].
       <td></td>
     </tr>
     <tr>
-      <td colspan="11" align="center">Accounts</td>
+      <td colspan="11">Accounts</td>
     </tr>
     <tr>
       <td>Authentication</td>
@@ -115,7 +116,7 @@ For more launchers, see Tayou's table[^1].
     <tr>
       <td>Skin Manager</td>
       <td>Only for MSA</td>
-      <td colspan="3" align="center">Yes; <Secondary>with 3D viewer</Secondary></td>
+      <td colspan="3">Yes; <Secondary>with 3D viewer</Secondary></td>
       <td></td>
       <td></td>
       <td></td>
@@ -137,7 +138,7 @@ For more launchers, see Tayou's table[^1].
       <td></td>
     </tr>
     <tr>
-      <td colspan="11" align="center">Mod Loader & OptiFine Support</td>
+      <td colspan="11">Mod Loader & OptiFine Support</td>
     </tr>
     <tr>
       <td>OptiFine</td>
@@ -218,7 +219,7 @@ For more launchers, see Tayou's table[^1].
       <td></td>
     </tr>
     <tr>
-      <td colspan="11" align="center">Instances</td>
+      <td colspan="11">Instances</td>
     </tr>
     <tr>
       <td>Import</td>
@@ -248,7 +249,7 @@ For more launchers, see Tayou's table[^1].
     </tr>
     <tr>
       <td>Toggling version metadata updates</td>
-      <td>No <Secondary>(always enabled)</Secondary></td>
+      <td><Status has /> <Secondary>(always checks)</Secondary></td>
       <td></td>
       <td></td>
       <td></td>
@@ -260,12 +261,12 @@ For more launchers, see Tayou's table[^1].
       <td></td>
     </tr>
     <tr>
-      <td colspan="11" align="center">Connection</td>
+      <td colspan="11">Connection</td>
     </tr>
     <tr>
       <td><a href="https://bmclapidoc.bangbang93.com/">BMCLAPI</a> Support</td>
-      <td>No</td>
-      <td colspan="2" align="center">Yes</td>
+      <td><Status /></td>
+      <td colspan="2">Yes</td>
       <td></td>
       <td></td>
       <td></td>

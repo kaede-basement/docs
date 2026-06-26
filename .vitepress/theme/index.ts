@@ -4,12 +4,14 @@ import 'nprogress/nprogress.css'
 import { watch } from 'vue'
 import { inBrowser, type EnhanceAppContext } from 'vitepress/dist/client/index.js'
 import "./custom.css";
+import Status from "./components/table/Status.vue";
 import Ref from './components/table/Ref.vue'
 import Secondary from "./components/table/Secondary.vue";
 
 export default {
   extends: DefaultTheme,
   enhanceApp({ app, router }: EnhanceAppContext) {
+    app.component("Status", Status);
     app.component('Ref', Ref);
     app.component("Secondary", Secondary);
 
