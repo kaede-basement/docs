@@ -1,7 +1,9 @@
 /*
  * Changes
  */
-#nprogress .bar { background: var(--vp-c-brand-1) }
+#nprogress .bar {
+  background: var(--vp-c-brand-1);
+}
 
 td[colspan] {
   text-align: center;
@@ -14,8 +16,16 @@ td[colspan] {
   border-radius: 6px;
   padding: 4px 8px;
 }
-.badge-green { background-color: var(--vp-c-green-3) }
-.badge-red { background-color: var(--vp-c-red-3) }
+.badge-green {
+  background-color: var(--vp-c-green-3);
+}
+.badge-red {
+  background-color: var(--vp-c-red-3);
+}
 
-.text-brand { color: var(--vp-button-brand-text) }
-.text-secondary { color: var(--vp-c-text-2) }
+.text-brand {
+  color: var(--vp-button-brand-text);
+}
+.text-secondary {
+  color: var(--vp-c-text-2);
+}
