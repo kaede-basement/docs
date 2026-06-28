@@ -1,0 +1,179 @@
+import { Lib, CFunction, types, suffix } from 'tjs:ffi';
+
+
+// 1. Get Process ID (PID) using FFI
+// Discord requires the PID of the process setting the activity.
+// On Windows, the function is '_getpid'; on Unix, it is 'getpid'.
+const isWindows = suffix === 'dll';
+const libc = new Lib(Lib.LIBC_NAME);
+const getpid = new CFunction(
+    libc.symbol(isWindows ? '_getpid' : 'getpid'), 
+    types.sint, 
+    []
+);
+const pid = getpid.call();
+
+// Utilities for binary protocol handling
+const encoder = new TextEncoder();
+const decoder = new TextDecoder();
+
+// 2. Determine the Discord IPC Pipe Path
+function getDiscordPipePath() {
+    if (isWindows) {
+        // Windows Named Pipe format
+        return (i) => `\\\\.\\pipe\\discord-ipc-${i}`;
+    } else {
+        // Unix Socket format (checks standard temp directories)
+        const baseDir = tjs.env.XDG_RUNTIME_DIR || tjs.env.TMPDIR || tjs.env.TMP || '/tmp';
+        return (i) => `${baseDir}/discord-ipc-${i}`;
+    }
+}
+
+// 3. Discord IPC Protocol: Write a Frame
+// A frame consists of an 8-byte header (Opcode + Length) followed by the JSON payload.
+async function writeFrame(socket, opcode, payload) {
+    const writer = (await socket.opened).writable.getWriter();
+    const payloadBytes = encoder.encode(JSON.stringify(payload));
+    
+    // Header: 4 bytes Opcode (LE), 4 bytes Length (LE)
+    const header = new Uint8Array(8);
+    const view = new DataView(header.buffer);
+    view.setUint32(0, opcode, true); // Little Endian
+    view.setUint32(4, payloadBytes.length, true);
+    
+    // Combine header and payload
+    const frame = new Uint8Array(8 + payloadBytes.length);
+    frame.set(header, 0);
+    frame.set(payloadBytes, 8);
+    
+    await writer.write(frame);
+    writer.releaseLock();
+}
+
+// 4. Discord IPC Protocol: Read Loop
+// We must listen for incoming frames. If Discord sends a PING (Opcode 3), 
+// we must reply with a PONG (Opcode 4) to keep the connection alive.
+async function readLoop(socket, onFrame) {
+    const reader = (await socket.opened).readable.getReader();
+    let buffer = new Uint8Array(0);
+    
+    try {
+        while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            
+            // Append new data to our buffer
+            const newBuffer = new Uint8Array(buffer.length + value.length);
+            newBuffer.set(buffer);
+            newBuffer.set(value, buffer.length);
+            buffer = newBuffer;
+            
+            // Process as many full frames as possible from the buffer
+            while (buffer.length >= 8) {
+                const view = new DataView(buffer.buffer, buffer.byteOffset, buffer.length);
+                const opcode = view.getUint32(0, true);
+                const length = view.getUint32(4, true);
+                
+                if (buffer.length < 8 + length) break; // Wait for more data
+                
+                const payloadBytes = buffer.slice(8, 8 + length);
+                const payloadStr = decoder.decode(payloadBytes);
+                let payload = {};
+                try { payload = JSON.parse(payloadStr); } catch(e) {}
+                
+                onFrame(opcode, payload);
+                
+                // Remove the processed frame from the buffer
+                buffer = buffer.slice(8 + length);
+            }
+        }
+    } catch (e) {
+        console.error("Discord RPC read loop error:", e);
+    }
+}
+
+// 5. Main RPC Initialization
+async function initDiscordRPC() {
+    const getPath = getDiscordPipePath();
+    let socket = null;
+    
+    // Discord can be on any pipe from 0 to 9. We try them all until one connects.
+    for (let i = 0; i < 10; i++) {
+        try {
+            const path = getPath(i);
+            console.log(`Trying to connect to Discord pipe: ${path}`);
+            socket = await tjs.connect('pipe', path);
+            await socket.opened;
+            console.log(`Connected to Discord on pipe ${i}!`);
+            break;
+        } catch (e) {
+            // Pipe doesn't exist or Discord isn't running, try next
+        }
+    }
+    
+    if (!socket) {
+        console.error("Could not connect to Discord. Is it running?");
+        return;
+    }
+    
+    // Start listening for PINGs and responses
+    readLoop(socket, async (opcode, payload) => {
+        if (opcode === 3) { // PING
+            console.log("Received PING, sending PONG...");
+            await writeFrame(socket, 4, payload); // PONG
+        } else if (opcode === 2) { // CLOSE
+            console.log("Discord closed connection:", payload);
+        }
+    });
+    
+    // Send Handshake (Opcode 0)
+    const CLIENT_ID = "1432010035034325105"; // <--- REPLACE WITH YOUR DISCORD APP ID
+    await writeFrame(socket, 0, { v: 1, client_id: CLIENT_ID });
+    console.log("Sent Handshake.");
+    
+    await new Promise(r => setTimeout(r, 500)); // Wait for handshake response
+    
+    // Send SET_ACTIVITY (Opcode 1)
+    const activity = {
+        details: "Playing Kaede Launcher",
+        state: "In Menus",
+        timestamps: { start: Math.floor(Date.now() / 1000) },
+        assets: { 
+            large_image: "misono_mika", // Key from Discord Developer Portal
+            large_text: "Kaede" 
+        }
+    };
+    
+    await writeFrame(socket, 1, {
+        cmd: "SET_ACTIVITY",
+        args: { pid: pid, activity: activity },
+        nonce: "1"
+    });
+    console.log("Sent SET_ACTIVITY.");
+}
+
+// Start the RPC connection in the background immediately
+initDiscordRPC().catch(console.error);
+
+// 6. HTTP Server Export
+// This continues to run alongside the Discord RPC connection
+export default {
+    fetch(request) {
+        const url = new URL(request.url);
+        
+        if (url.pathname === '/') {
+            return new Response(JSON.stringify({
+                "kaede": true,
+                "discord_rpc": "running",
+                "pid": pid
+            }), {
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+        
+        return new Response(`You requested path: ${url.pathname}\n`, {
+            status: 200,
+            headers: { 'Content-Type': 'text/plain' }
+        });
+    }
+};
