@@ -324,18 +324,18 @@ App.requestPermissions(perms)        // prompt user for additional permissions
 
 ### Chaining API methods
 
-| Method | Purpose |
-|--------|---------|
-| `.on(event, opts)` | Listen to lifecycle/app events (with ID for removal) |
-| `.registerComponent(name, Component)` | Register a Vue component for use in pages/overrides |
-| `.page(id, componentName)` | Register a page |
-| `.override(target, componentName)` | Override a built-in component |
-| `.settings(tabId, opts, componentName)` | Add a settings tab |
-| `.hook(event, opts)` | Hook into app events (navigation, etc.) with before/after timing |
-| `.subscribe(path, opts)` | Observe state changes |
-| `.style(opts)` | Inject CSS |
-| `.command(name, fn)` | Register a command (for keybinds / other plugins) |
-| `.run()` | Finalize and activate (tracks everything for auto-cleanup) |
+| Method                                  | Purpose                                                          |
+|-----------------------------------------|------------------------------------------------------------------|
+| `.on(event, opts)`                      | Listen to lifecycle/app events (with ID for removal)             |
+| `.registerComponent(name, Component)`   | Register a Vue component for use in pages/overrides              |
+| `.page(id, componentName)`              | Register a page                                                  |
+| `.override(target, componentName)`      | Override a built-in component                                    |
+| `.settings(tabId, opts, componentName)` | Add a settings tab                                               |
+| `.hook(event, opts)`                    | Hook into app events (navigation, etc.) with before/after timing |
+| `.subscribe(path, opts)`                | Observe state changes                                            |
+| `.style(opts)`                          | Inject CSS                                                       |
+| `.command(name, fn)`                    | Register a command (for keybinds / other plugins)                |
+| `.run()`                                | Finalize and activate (tracks everything for auto-cleanup)       |
 
 ### Hot reload (development)
 
@@ -384,6 +384,54 @@ logCount.value = logs.value.length;
 ```
 
 Then use `logCount` in your own log viewer implementation to manage the empty container height, and display corresponding lines in the virtual viewer.
+
+### Instances API
+
+```ts
+// Adds an instance and writes it to the file
+Instances.add("id", { /* ... */ });
+// Removes an instance and writes it to the file
+Instances.remove("id");
+
+// For batching changes
+await Instances
+  .batching()
+  .batchAdd("id1", { /* ... */ })
+  .batchAdd("id2", { /* ... */ })
+  .batchRemove("id3")
+  .write();
+
+// ...
+// Pseudo-implementation
+Instances.batching = () => {
+  const instances: InstanceStatesType = getInstances();
+  const commands: Array<() => void> = [];
+
+  return {
+    "batchAdd": (id: string, instance: unknown) => {
+      commands.push(() => {
+        instances[id] = instance;
+      });
+    },
+    "batchRemove": (id: string) => {
+      commands.push(() => {
+        delete instances[id];
+      });
+    },
+    "write": async () => {
+      for (const command of commands) {
+        command();
+      }
+
+      // ... handle the Instances object sync with the file
+    },
+  };
+};
+```
+
+### Plugins
+
+now plugins represent ZIP files. they should have `metadata.json` - a necessary file that specifies the code entry point and displays other metadata.
 
 ## References
 
